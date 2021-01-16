@@ -41,3 +41,20 @@
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
 }
+
+.heroes a {
+  color: #405061;
+  text-decoration: none;
+}
+
+.heroes button {
+  border: 1px #ccc solid;
+  float: right;
+  margin: 2.5px 5px;
+}
+
+.heroes button:hover {
+  cursor: pointer;
+  background-color: rgb(247, 83, 113);
+  color: white;
+}

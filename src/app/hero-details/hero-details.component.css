@@ -1,0 +1,15 @@
+.hero-details {
+  box-shadow: 2px 2px 8px 8px rgba(0, 0, 0, 0.068);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 20px;
+  text-align: center;
+}
+
+.hero-details button {
+  margin: 10px 0;
+}
+
+.hero-details > div {
+  margin: 10px 0;
+}

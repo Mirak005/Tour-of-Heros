@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
+// import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heros',
@@ -11,10 +11,9 @@ import { MessageService } from '../message.service';
 })
 export class HerosComponent implements OnInit {
   heros: Hero[];
-  selectedHero: Hero;
+  // selectedHero: Hero;
   constructor(
-    private heroService: HeroService,
-    private messageService: MessageService
+    private heroService: HeroService // private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -26,9 +25,25 @@ export class HerosComponent implements OnInit {
     this.heroService.getHeros().subscribe((heros) => (this.heros = heros));
   }
 
-  //select method
-  onSelect(hero: Hero) {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return window.alert('Please enter a valid Hero Name');
+    }
+    this.heroService
+      .addHero({ name } as Hero)
+      .subscribe((hero) => this.heros.unshift(hero));
   }
+
+  removeHero(hero: Hero) {
+    this.heroService.removeHero(hero).subscribe(() => {
+      this.heros = this.heros.filter((h) => h.id !== hero.id);
+    });
+  }
+
+  //select method
+  // onSelect(hero: Hero) {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
 }
