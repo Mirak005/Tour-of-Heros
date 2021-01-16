@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "save" : "git add . && git commit -m $MIRAK && git push" ,
-    "mirak":"$MSG && echo MSG"
+    "mirak" : "git add . && git commit -m $MIRAK && git push" 
+    
   },
   "private": true,
   "dependencies": {
