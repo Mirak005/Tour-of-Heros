@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mirak" : "git add . && git commit -m $COMMENT && git push " 
+    "mirak" : "git add . && git commit -m $COMMENT && git push && echo 'Good Bye' " 
     
   },
   "private": true,
